@@ -1937,6 +1937,7 @@ Worker.prototype.toContainer = function toContainer() {
     // Setup root element and inner page height.
     var root = this.prop.container;
     var pxPageHeight = this.prop.pageSize.inner.px.height;
+    console.info('print test log', pxPageHeight);
     if (this.opt['html2canvas'] && this.opt['html2canvas']['width']) {
       pxPageHeight = this.opt['html2canvas']['width'] * this.prop.pageSize.inner.ratio;
     }
