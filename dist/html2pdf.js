@@ -1,6 +1,6 @@
 /**
  * html2pdf.js v0.9.3
- * Copyright (c) 2021 Erik Koopmans
+ * Copyright (c) 2023 Erik Koopmans
  * Released under the MIT License.
  */
 (function (global, factory) {
@@ -1943,6 +1943,9 @@ Worker.prototype.toContainer = function toContainer() {
     // Setup root element and inner page height.
     var root = this.prop.container;
     var pxPageHeight = this.prop.pageSize.inner.px.height;
+    if (this.opt['html2canvas'] && this.opt['html2canvas']['width']) {
+      pxPageHeight = this.opt['html2canvas']['width'] * this.prop.pageSize.inner.ratio;
+    }
 
     // Check all requested modes.
     var modeSrc = [].concat(this.opt.pagebreak.mode);
